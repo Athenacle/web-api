@@ -1,0 +1,11 @@
+{
+  "listen": {
+    "address": "10.70.20.160",
+    "port": 5432
+  },
+  "apk": {
+    "repo_name": "build",
+    "root_directory": "/tmp/apk/sss",
+    "rsa_pkey_file": "/tmp/build-61ecc772.rsa"
+  }
+}
