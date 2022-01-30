@@ -17,5 +17,19 @@ find_package(OpenSSL REQUIRED)
 
 find_package(spdlog)
 
+option(ENABLE_WEB_API "Build Web-API" ON)
+option(ENABLE_APK_MANAGER "Build apk-manager" ON)
+
+configure_file(${CMAKE_CURRENT_SOURCE_DIR}/config.h.in ${CMAKE_BINARY_DIR}/config.h @ONLY)
+
+include_directories(${CMAKE_BINARY_DIR})
+
 add_subdirectory(ostool)
-add_subdirectory(web-api/)
+
+if (ENABLE_WEB_API)
+    add_subdirectory(web-api/)
+endif ()
+
+if (ENABLE_APK_MANAGER)
+    add_subdirectory(apk-manager/)
+endif ()
